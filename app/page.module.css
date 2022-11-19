@@ -5,31 +5,35 @@
 .online {
   background-color: #202E20;
   padding: 0.1rem 0.75rem;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   font-weight: 600;
   color: #5BAD59;
+  user-select: none;
 }
 
 .loading {
   background-color: #0f3547;
   padding: 0.1rem 0.75rem;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   font-weight: 600;
   color: #0284c7;
+  user-select: none;
 }
 
 .offline {
   background-color: #440f0f;
   padding: 0.1rem 0.75rem;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   font-weight: 600;
   color: #dc2626;
+  user-select: none;
 }
 
 .rove {
   height: 12rem;
   width: 35rem;
   position: relative;
+  user-select: none;
 }
 
 .hero {
@@ -62,7 +66,7 @@
   position: absolute;
   inset: 0rem;
   background-color: rgba(2, 132, 199, 0.2);
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   backdrop-filter: blur(0.05rem);
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
 transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);

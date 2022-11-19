@@ -1,27 +1,38 @@
-"use client";
-
 import Image from "next/image";
-import { Suspense, useEffect, useLayoutEffect, useRef, useState } from "react";
 import Players, { CopyIP } from "../components/home/serverinfo";
 import styles from "./page.module.css";
 import rove from "../public/rove_banner.png";
-import cardStyles from "../components/home/card.module.css";
+import Cards, { Card } from "../components/home/cards";3
+import vault from "../public/banners/vault.png"
+import research from "../public/banners/research.png"
+
+const cards: Card[] = [{
+  title: "Release 1.0!",
+  content: "we have now released a super very epic 420 cool version of rove that everyone should play :troll: ",
+  image: research,
+  link: "/updates/1.0",
+  linkName: "Read Updates1!!!1!"
+
+},{
+  title: "Monuments",
+  content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+  image: vault,
+  link: "/monuments",
+},{
+  title: "Release 1.0!",
+  content: "we have now released a super very epic 420 cool version of rove that everyone should play :troll: ",
+  image: research,
+  link: "/updates/1.0",
+  linkName: "Read Updates1!!!1!"
+
+},{
+  title: "Monuments",
+  content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+  image: vault,
+  link: "/monuments",
+},]
 
 export default function Home() {
-  const inputRef = useRef<HTMLDivElement>(null);
-  const [mousePosition, setMousePosition] = useState([0, 0]);
-  useEffect(() => {
-    document.getElementById("cards").onmousemove = (e) => {
-      for (const card of document.getElementsByClassName("card")) {
-        const rect = card.getBoundingClientRect(),
-          x = e.clientX - rect.left,
-          y = e.clientY - rect.top;
-
-        card.style.setProperty("--mouse-x", `${x}px`);
-        card.style.setProperty("--mouse-y", `${y}px`);
-      }
-    };
-  });
   return (
     <div>
       <div className={styles.hero}>
@@ -35,29 +46,14 @@ export default function Home() {
         </div>
         <h3 className={styles.bold}>
           Rove is an open-world, zombie survaival server thing. text text
-          texttext{" "}
+          texttext
         </h3>
         <div className={styles.serverInfo}>
           <Players />
           <CopyIP ip="hypixel.net" />
         </div>
       </div>
-      <div
-        className={cardStyles.cards}
-        id="cards"
-        onMouseMove={(e) => setMousePosition([e.clientX, e.clientY])}
-      >
-        {["card 1", "card 2"].map((v, i) => (
-          <div className={cardStyles.card} key={i} ref={inputRef}>
-            {/* <style jsx>{`
-              :root {
-                --mouse-x: ${mousePosition[0] - inputRef.current.getBoundingClientRect()}
-              }
-            `}</style> */}
-            <div className={cardStyles.content}>{v}</div>
-          </div>
-        ))}
-      </div>
+      <Cards cards={cards} />
     </div>
   );
 }
