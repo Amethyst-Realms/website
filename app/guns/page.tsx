@@ -1,30 +1,29 @@
 import connect, { Gun } from "../../lib/mongo";
+import Loading from "./loading";
 
 export default async function Guns() {
-	const data = await getData()
-return (
-	<div>
-		guns
-	</div>
-)
+  const data = await getData();
+  if (!data) {
+    return <div>error</div>;
+  }
+  return (
+    <div>
+      <Loading />
+      guns
+      {data.map((v, i) => (
+        <div key={i}>{v.ammo}</div>
+      ))}
+    </div>
+  );
 }
 
 async function getData() {
   try {
-    await connect()
-    const r = await Gun.find()
-    // `await clientPromise` will use the default database passed in the MONGODB_URI
-    // However you can use another database (e.g. myDatabase) by replacing the `await clientPromise` with the following code:
-    //
-    // `const client = await clientPromise`
-    // `const db = client.db("myDatabase")`
-    //
-    // Then you can execute queries against your database like so:
-    // db.find({}) or any of the MongoDB Node Driver commands
-    console.log(r)
-    return r
+    await connect();
+    const r = await Gun.find({});
+    return r;
   } catch (e) {
-    console.error(e)
-    return "error"
+    //console.error(e)
+    return false;
   }
 }

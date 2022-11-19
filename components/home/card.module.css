@@ -28,7 +28,7 @@
   font-size: 0.85rem;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 6;
+  -webkit-line-clamp: 5;
   overflow: hidden;
 }
 
@@ -76,7 +76,7 @@
   border-radius: 10px;
   cursor: pointer;
   display: flex;
-  height: 40rem;
+  height: 28rem;
   flex-direction: column;
   position: relative;
   width: 22rem;

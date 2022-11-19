@@ -8,10 +8,9 @@ if (!process.env.MONGODB_URI) {
 
 export default async function connect() {
 	if (mongoose.connection.readyState !== 1) {
-		await mongoose.connect("mongodb+srv://website:8Lv24OcNX8rCBqFs@cluster0.xbk5q.mongodb.net/?retryWrites=true&w=majority", {
-			//VScode says process.env.DB_LINK is undefined, but it works
-			serverSelectionTimeoutMS: 5000, // Keep trying to send operations for 5 seconds
-			socketTimeoutMS: 10000, // Close sockets after 10 seconds of inactivity
+		await mongoose.connect("mongodb+srv://website:8Lv24OcNX8rCBqFs@cluster0.xbk5q.mongodb.net/Rove?retryWrites=true&w=majority", {
+			serverSelectionTimeoutMS: 5000, 
+			socketTimeoutMS: 10000, 
 		});
 	}
 }
@@ -22,4 +21,4 @@ const GunSchema = new mongoose.Schema({
   //name: string
 })
 
-export const Gun = mongoose.models.Guns || mongoose.model('Guns', GunSchema)
+export const Gun = mongoose.models.Gun || mongoose.model('Gun', GunSchema)
