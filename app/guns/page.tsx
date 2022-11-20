@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import connect, { Gun } from "../../lib/mongo";
 import Loading from "./loading";
 
@@ -8,11 +9,12 @@ export default async function Guns() {
   }
   return (
     <div>
-      <Loading />
+      <Suspense>
       guns
       {data.map((v, i) => (
         <div key={i}>{v.ammo}</div>
       ))}
+      </Suspense>
     </div>
   );
 }
