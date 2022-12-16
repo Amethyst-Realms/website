@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import styles from "./navbar.module.css"
 
 export default function Navbar() {
 	const pathname = usePathname();
@@ -26,12 +25,8 @@ export default function Navbar() {
 	]
 
 	return (
-		<nav className={styles.nav}>
-			{pages.map((page, i) => (
-				<Link href={page.route} key={i} className={page.matcher.test(pathname as string) ? styles.selected : undefined}>
-				{page.name}
-				</Link>
-			))}
+		<nav className="">
+			
 		</nav>
 	)
 }

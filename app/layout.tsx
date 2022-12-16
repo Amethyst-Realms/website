@@ -1,14 +1,23 @@
-import Footer from "../components/layout/footer";
-import Navbar from "../components/layout/navbar";
-import "./globals.css";
-import "./normalize.css"
-import styles from "./layout.module.css";
+import 'server-only'
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+import "./globals.css";
+import SupabaseListener from '../components/supabase-listener'
+import createServerClient from '../lib/supabase-server'
+import { SupabaseClient } from '@supabase/auth-helpers-nextjs';
+import { Database } from '../lib/database.types';
+
+// do not cache this layout
+export const revalidate = 0
+
+export type TypedSupabaseClient = SupabaseClient<Database>;
+
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const supabase = createServerClient()
+
+  const {
+    data: { session },
+  } = await supabase.auth.getSession()
+  
   return (
     <html lang="en">
       {/*
@@ -17,10 +26,10 @@ export default function RootLayout({
       */}
       <head />
       <body>
-        <Navbar />
-        <div className={styles.content}>{children}</div>
-        <Footer />
+        <SupabaseListener accessToken={session?.access_token} />
+        <div>{children}</div>
       </body>
     </html>
   );
 }
+
