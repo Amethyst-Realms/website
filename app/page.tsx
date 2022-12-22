@@ -1,5 +1,5 @@
 import Image from "next/image";
-import rove from "../public/rove_banner.png";
+import rove from "../public/logos/rove_banner.png";
 import createClient from '../lib/supabase-server'
 import { Database } from "../lib/database.types";
 import { SupabaseClient } from "@supabase/auth-helpers-nextjs";
