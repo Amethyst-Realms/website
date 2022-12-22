@@ -26,7 +26,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       */}
       <head />
       <body>
-        <SupabaseListener accessToken={session?.access_token} />
+        {/* <SupabaseListener accessToken={session?.access_token} /> */}
         <div>{children}</div>
       </body>
     </html>
