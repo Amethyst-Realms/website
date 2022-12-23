@@ -1,29 +1,55 @@
-import 'server-only'
+import "server-only";
 
+import "./globals.css";
+import Layout from "../components/layout";
 import Image from "next/image";
-import rove from "../public/logos/rove_banner.png";
-import createClient from '../lib/supabase-server'
-import { Database } from "../lib/database.types";
+import amethystLogo from "../public/logos/amethyst-with-gradient.png"
+import Pill, { InnerPill } from "../components/element/pill";
+import Copy from "../components/element/copy";
 
-
-export const revalidate = 0
+export const revalidate = 0;
 
 
 
 export default async function Home() {
-  const supabase = createClient()
-  const { data } = await supabase.from("test").select("*")
 
-  
+  const gradient1 = {
+    background: `linear-gradient(180deg, rgba(0,0,0, 0.95) 0%, rgba(0,0,0,0.95) 100%), radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(0, 0, 0, 0.8) 100%
+    ), linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 80%, rgba(0,0,0,1) 100%)`
+}
+  //const data = await getData();
+
   return (
-    <div>
-      <div>
-testing
-        <div >
-        {JSON.stringify({ data }, null, 2)}
+    <Layout fixed={true}>
+      <div className="h-screen [background-image:url('/misc/amethyst-block-darked.jpg')] [background-size:3.5rem] ">
+        <div className="absolute inset-0 bg-black/10 flex flex-col items-center justify-center" style={gradient1}>
+          <div className="relative ">
+            <Image 
+              src={amethystLogo}
+              alt="Amethyst Realms Logo"
+              width={3510}
+              height={2106}
+              className="h-screen w-auto -translate-y-28"
+            />
+            <div className="absolute inset-0 grid place-items-center ">
+              <div className="translate-y-32 flex space-x-8">
+                <Pill className="!pr-1">
+                  Online Players <InnerPill>123</InnerPill>
+                </Pill>
+                <Copy toCopy="ip of server">
+                  <Pill hover={true}>Copy IP</Pill>
+                </Copy>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      
-    </div>
+      <div className="mb-[200rem]">test</div>
+      <div></div>
+    </Layout>
   );
-  }
+}
