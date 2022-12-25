@@ -1,4 +1,4 @@
-import 'server-only'
+//import 'server-only'
 
 import "./globals.css";
 // import SupabaseListener from '../components/supabase-listener'

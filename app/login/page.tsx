@@ -1,32 +1,34 @@
-'use client'
+// 'use client'
 
-import supabase from '../../lib/supabase-browser'
+// import supabase from '../../lib/supabase-browser'
 
-export default function Login() {
-  const handleLogin = async () => {
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: 'github',
-    })
+// export default function Login() {
+//   const handleLogin = async () => {
+//     const { error } = await supabase.auth.signInWithOAuth({
+//       provider: 'github',
+//     })
 
-    if (error) {
-      console.log({ error })
-    }
-  }
+//     if (error) {
+//       console.log({ error })
+//     }
+//   }
 
-  const handleLogout = async () => {
-    const { error } = await supabase.auth.signOut()
+//   const handleLogout = async () => {
+//     const { error } = await supabase.auth.signOut()
 
-    if (error) {
-      console.log({ error })
-    }
-  }
+//     if (error) {
+//       console.log({ error })
+//     }
+//   }
 
-  return (
+//   return (
 		
-			<>
-				<button onClick={handleLogin}>Login</button>
-				<button onClick={handleLogout}>Logout</button>
-			</>
+// 			<>
+// 				<button onClick={handleLogin}>Login</button>
+// 				<button onClick={handleLogout}>Logout</button>
+// 			</>
 		
-	)
-}
+// 	)
+// }
+
+export {}
