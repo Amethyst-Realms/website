@@ -4,8 +4,6 @@ import "./globals.css";
 import Layout from "../components/layout";
 import Image from "next/image";
 import amethystLogo from "../public/logos/amethyst-with-gradient.png";
-import Pill, { InnerPill } from "../components/element/pill";
-import Copy from "../components/element/copy";
 import CopyIP from "../components/home/copyIP";
 import OnlinePlayers from "../components/home/onlinePlayer";
 
@@ -20,10 +18,9 @@ export default function Home() {
     `,
   };
   //radial-gradient(circle, rgba(28,4,47,0.2) 0%,  rgba(0,0,0,0) 20%), 
-  //const data = await getData();
 
   return (
-    <Layout fixed={true}>
+    <>
       <div className="h-screen [background-image:url('/misc/amethyst-block-darked.jpg')] [background-size:3.5rem] ">
         <div
           className="absolute inset-0 bg-black/10 flex flex-col items-center justify-center"
@@ -39,8 +36,8 @@ export default function Home() {
             />
             <div className="absolute inset-0 grid place-items-center ">
               <div className="translate-y-32 flex space-x-8">
-                {/* @ts-expect-error Server Component */}
-                <OnlinePlayers />
+                
+                
                 <CopyIP />
               </div>
             </div>
@@ -49,6 +46,6 @@ export default function Home() {
       </div>
       <div className="mb-[200rem]">test</div>
       <div></div>
-    </Layout>
+    </>
   );
 }
