@@ -9,8 +9,6 @@ import Copy from "../components/element/copy";
 import CopyIP from "../components/home/copyIP";
 import OnlinePlayers from "../components/home/onlinePlayer";
 
-
-
 export default function Home() {
   const gradient1 = {
     background: `linear-gradient(180deg, rgba(0,0,0, 0.95) 0%, rgba(0,0,0,0.95) 100%), radial-gradient(
@@ -18,8 +16,10 @@ export default function Home() {
       rgba(255, 255, 255, 0) 0%,
       rgba(255, 255, 255, 0) 50%,
       rgba(0, 0, 0, 0.8) 100%
-    ), linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 80%, rgba(0,0,0,1) 100%)`,
+    ), linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 95%, rgba(0,0,0,1) 100%)
+    `,
   };
+  //radial-gradient(circle, rgba(28,4,47,0.2) 0%,  rgba(0,0,0,0) 20%), 
   //const data = await getData();
 
   return (
@@ -30,7 +30,7 @@ export default function Home() {
           style={gradient1}
         >
           <div className="relative ">
-            <Image
+          <Image
               src={amethystLogo}
               alt="Amethyst Realms Logo"
               width={3510}
