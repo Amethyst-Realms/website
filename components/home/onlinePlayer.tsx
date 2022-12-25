@@ -1,7 +1,5 @@
 import Pill, { InnerPill } from "../element/pill";
 
-export const revalidate = 120
-
 export default async function OnlinePlayers() {
   const data = await getData();
 
