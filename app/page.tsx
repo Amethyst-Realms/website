@@ -33,7 +33,7 @@ export default function Home() {
               alt="Amethyst Realms Logo"
               width={3510}
               height={2106}
-              className="h-screen w-auto -translate-y-28 select-none"
+              className="2xl:max-w-[90rem] -translate-y-28 select-none"
             />
             <div className="absolute inset-0 grid place-items-center ">
               <div className="translate-y-32 flex space-x-8">
