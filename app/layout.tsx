@@ -1,23 +1,23 @@
-//import 'server-only'
+import 'server-only'
 
 import { ReactNode } from "react";
 import "./globals.css";
-// import SupabaseListener from '../components/supabase-listener'
-// import createServerClient from '../lib/supabase-server'
-// import { SupabaseClient } from '@supabase/auth-helpers-nextjs';
-// import { Database } from '../lib/database.types';
+import SupabaseListener from '../components/supabase-listener'
+import createServerClient from '../lib/supabase-server'
+import { SupabaseClient } from '@supabase/auth-helpers-nextjs';
+import { Database } from '../lib/database.types';
 
 // do not cache this layout
 export const revalidate = 0;
 
-// export type TypedSupabaseClient = SupabaseClient<Database>;
+export type TypedSupabaseClient = SupabaseClient<Database>;
 
-export default function RootLayout({ children }: { children: ReactNode }) {
-  // const supabase = createServerClient()
+export default async function RootLayout({ children }: { children: ReactNode }) {
+  const supabase = createServerClient()
 
-  // const {
-  //   data: { session },
-  // } = await supabase.auth.getSession()
+  const {
+    data: { session },
+  } = await supabase.auth.getSession()
 
   return (
     <html lang="en">
@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       */}
       <head />
       <body>
-        {/* <SupabaseListener accessToken={session?.access_token} /> */}
+        <SupabaseListener accessToken={session?.access_token} />
         {children}
       </body>
     </html>

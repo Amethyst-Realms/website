@@ -1,4 +1,4 @@
-//import "server-only";
+import "server-only";
 
 import "./globals.css";
 import Layout from "../components/layout";
@@ -17,17 +17,17 @@ export default function Home() {
     ), linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 95%, rgba(0,0,0,1) 100%)
     `,
   };
-  //radial-gradient(circle, rgba(28,4,47,0.2) 0%,  rgba(0,0,0,0) 20%), 
+  //radial-gradient(circle, rgba(28,4,47,0.2) 0%,  rgba(0,0,0,0) 20%),
 
   return (
-    <>
+    <Layout fixed={true}>
       <div className="h-screen [background-image:url('/misc/amethyst-block-darked.jpg')] [background-size:3.5rem] ">
         <div
           className="absolute inset-0 bg-black/10 flex flex-col items-center justify-center"
           style={gradient1}
         >
           <div className="relative ">
-          <Image
+            <Image
               src={amethystLogo}
               alt="Amethyst Realms Logo"
               width={3510}
@@ -36,8 +36,8 @@ export default function Home() {
             />
             <div className="absolute inset-0 grid place-items-center ">
               <div className="translate-y-32 flex space-x-8">
-                
-                
+                {/* @ts-expect-error Server Component */}
+                <OnlinePlayers />
                 <CopyIP />
               </div>
             </div>
@@ -46,6 +46,6 @@ export default function Home() {
       </div>
       <div className="mb-[200rem]">test</div>
       <div></div>
-    </>
+    </Layout>
   );
 }
