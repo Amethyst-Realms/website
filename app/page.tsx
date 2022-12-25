@@ -29,6 +29,7 @@ export default function Home() {
           <div className="relative ">
             <Image
               src={amethystLogo}
+              priority={true}
               alt="Amethyst Realms Logo"
               width={3510}
               height={2106}
