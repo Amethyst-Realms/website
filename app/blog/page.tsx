@@ -10,7 +10,7 @@ const getData = async () => {
 	const page = await notion.blocks.children.list({
 		block_id: "b0893b0e3d15430290281e92f2b6d714"
 	})
-  console.log(page);
+  //console.log(page);
   return page;
 };
 
