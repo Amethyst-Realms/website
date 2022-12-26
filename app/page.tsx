@@ -6,6 +6,8 @@ import Image from "next/image";
 import amethystLogo from "../public/logos/amethyst-with-gradient.png";
 import CopyIP from "../components/home/copyIP";
 import OnlinePlayers from "../components/home/onlinePlayer";
+import RoveCard from "../components/home/rove";
+import Pill from "../components/element/pill";
 
 export default function Home() {
   const gradient1 = {
@@ -45,7 +47,19 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="mb-[200rem]">test</div>
+      <section className="grow flex flex-col ">
+        <h2 className="mx-auto font-bold text-7xl mt-8">Blog</h2>
+      </section>
+      <section className="grow flex flex-col ">
+      <h2 className="mx-auto font-bold text-7xl mt-8">Servers</h2>
+      <div className="max-w-4xl w-full mx-auto py-10 grid md:grid-cols-2 lg:grid-cols-3 gap-4  ">
+        <div className=""></div>
+        <Pill className="flex flex-col rounded-md py-6">
+          <RoveCard />
+        </Pill>
+        <div className=" md:col-span-2 lg:col-span-1"></div>
+      </div>
+      </section>
       <div></div>
     </Layout>
   );
