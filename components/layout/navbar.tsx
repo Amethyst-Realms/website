@@ -48,7 +48,7 @@ export default function Navbar({ fixed }: { fixed?: boolean }) {
 					</Link>
 				</div>
         <a rel="noreferrer noopener" href="https://forms.gle/gZ496XLE238fZERs6" target="_blank" className="z-40">
-          <Pill small={true}>Apply</Pill>
+          <Pill hover small={true}>Apply</Pill>
         </a>
       </div>
     </nav>
