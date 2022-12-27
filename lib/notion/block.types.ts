@@ -2,10 +2,10 @@ export interface Post {
   title: string;
   description?: string;
   id: string;
-  idNoDash: string;
   coverImage?: string;
   created: Date;
   updated: Date;
+  type?: "update" | "event" | "dev blog";
 }
 
 export interface Block {

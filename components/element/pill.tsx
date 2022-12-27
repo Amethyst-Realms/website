@@ -36,12 +36,14 @@ export default function Pill({
 export function InnerPill({
   className,
   children,
+  left
 }: {
   className?: string;
   children: ReactNode;
+  left: boolean
 }) {
   return (
-    <div className={`rounded-full px-2 bg-white/10 ml-4 ${className}`}>
+    <div className={`rounded-full px-2 bg-white/10 ${left ? "mr-4" : "ml-4"} ${className}`}>
       {children}
     </div>
   );

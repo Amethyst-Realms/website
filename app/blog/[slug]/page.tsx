@@ -4,6 +4,7 @@ import { Fragment } from "react";
 import Layout from "../../../components/layout";
 import Pill from "../../../components/element/pill";
 import { TitleComponent } from "./title";
+import { formatDate } from "../../../lib/misc";
 
 export const revalidate = 30; // revalidatyes every 30 seconds if someone requests the page. Not permanant, using this for testing
 
@@ -14,9 +15,8 @@ export default async function BlogPage({
 }) {
   const { slug } = params;
   const { post, postInfo } = await getPost(slug);
-	/* @ts-expect-error Mistyped JSON*/
-	const updatedDate = new Date(postInfo.last_edited_time)
-	const updatedDateFormatted = `${updatedDate.getMonth()} / ${updatedDate.getDate()} / ${updatedDate.getFullYear()}`
+  /* @ts-expect-error Mistyped JSON*/
+  const updatedDate = formatDate(new Date(postInfo.last_edited_time));
 
   return (
     // <div>
@@ -25,16 +25,15 @@ export default async function BlogPage({
     //   {postInfo.properties.title.title[0].plain_text}
     //   {/* @ts-expect-error Mistyped JSON*/}
     //   {postInfo.cover.external.url}
-    
-    // </div> 
-    <Layout>
-			
-      <div className="mx-auto flex flex-col max-w-4xl py-16 w-full px-6">
-			
-        <section>
+
+    // </div>
+
+    <>
+      <section>
+        <div className="relative mb-16">
           {/* @ts-expect-error Mistyped JSON*/}
-          {postInfo.cover && (
-            <div className="relative mb-16">
+          {postInfo.cover ? (
+            <>
               <img
                 /* @ts-expect-error Mistyped JSON*/
                 src={postInfo.cover.external.url}
@@ -46,32 +45,37 @@ export default async function BlogPage({
                 src={postInfo.cover.external.url}
                 className=" blur-xl w-full h-64 object-cover rounded-2xl"
               />
-            </div>
+            </>
+          ) : (
+            <>
+              <div className="grow h-44 absolute inset-0 z-10 bg-gradient-to-br from-cyan-600 to-purple-500  rounded-xl"></div>
+              <div className="grow h-44 blur-xl bg-gradient-to-br from-cyan-600 to-purple-500  rounded-xl"></div>
+            </>
           )}
-          	
-        </section>
-				<TitleComponent>
-						<>
-							{/* @ts-expect-error Mistyped JSON*/}
-							{postInfo.properties.title.title[0].plain_text}
-						</>
-					</TitleComponent>
-				<section>
-					<Pill className="inline-flex  !text-sm text-gray-300">Updated {updatedDateFormatted}</Pill>
-					
-        </section>
-        <section>
-          <div className="prose prose-invert max-w-4xl flex flex-col ">
-            {post.results.map((postInfo, i) => (
-              <Fragment key={i}>
-                {/* @ts-expect-error */}
-                <RenderBlock block={postInfo} />
-              </Fragment>
-            ))}
-          </div>
-        </section>
-      </div>
-    </Layout>
+        </div>
+      </section>
+      <TitleComponent>
+        <>
+          {/* @ts-expect-error Mistyped JSON*/}
+          {postInfo.properties.title.title[0].plain_text}
+        </>
+      </TitleComponent>
+      <section>
+        <Pill className="inline-flex -translate-y-6 !text-sm text-gray-300">
+          Updated {updatedDate}
+        </Pill>
+      </section>
+      <section>
+        <div className="prose prose-invert max-w-4xl flex flex-col ">
+          {post.results.map((postInfo, i) => (
+            <Fragment key={i}>
+              {/* @ts-expect-error */}
+              <RenderBlock block={postInfo} />
+            </Fragment>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }
 
