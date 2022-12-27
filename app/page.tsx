@@ -54,7 +54,7 @@ export default function Home() {
       <h2 className="mx-auto font-bold text-7xl mt-8">Servers</h2>
       <div className="max-w-4xl w-full mx-auto py-10 grid md:grid-cols-2 lg:grid-cols-3 gap-4  ">
         <div className=""></div>
-        <Pill className="flex flex-col rounded-md py-6">
+        <Pill className="flex flex-col !rounded-md !py-6">
           <RoveCard />
         </Pill>
         <div className=" md:col-span-2 lg:col-span-1"></div>
