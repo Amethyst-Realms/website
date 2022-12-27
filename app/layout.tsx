@@ -7,6 +7,7 @@ import createServerClient from '../lib/supabase-server'
 import { SupabaseClient } from '@supabase/auth-helpers-nextjs';
 import { Database } from '../lib/database.types';
 import { Inter } from '@next/font/google'
+import AnalyticsWrapper from "../components/layout/analytics";
 
 // do not cache this layout
 // export const revalidate = 0;
@@ -31,6 +32,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       <head />
       <body className={inter.className}>
         {/* <SupabaseListener accessToken={session?.access_token} /> */}
+        <AnalyticsWrapper />
         {children}
       </body>
     </html>
