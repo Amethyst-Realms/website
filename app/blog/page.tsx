@@ -26,12 +26,12 @@ const getData = async () => {
       if (results[i + 1] && results[i + 1].has_children == false) {
         desc = results[i + 1].paragraph?.rich_text[0].plain_text;
       }
-
+//@ts-expect-error replace shit typing from notion api
       const page: PageType = await notion.pages.retrieve({
         page_id: result.id
       })
 
-      console.log(page)
+      //console.log(page)
 
       posts.push({
         created: new Date(result.created_time),
