@@ -3,6 +3,7 @@ import { RenderBlock } from "../../../components/notionPage";
 import { Fragment } from "react";
 import Layout from "../../../components/layout";
 import Pill from "../../../components/element/pill";
+import { TitleComponent } from "./title";
 
 export const revalidate = 30; // revalidatyes every 30 seconds if someone requests the page. Not permanant, using this for testing
 
@@ -29,6 +30,7 @@ export default async function BlogPage({
     <Layout>
 			
       <div className="mx-auto flex flex-col max-w-4xl py-16 w-full px-6">
+			
         <section>
           {/* @ts-expect-error Mistyped JSON*/}
           {postInfo.cover && (
@@ -46,17 +48,20 @@ export default async function BlogPage({
               />
             </div>
           )}
-          <h1 className="text-5xl tracking-wide leading-[4.5rem] font-extrabold">
-            {/* @ts-expect-error Mistyped JSON*/}
-            {postInfo.properties.title.title[0].plain_text}
-          </h1>
-					
-					
+          	
+        </section>
+				<TitleComponent>
+						<>
+							{/* @ts-expect-error Mistyped JSON*/}
+							{postInfo.properties.title.title[0].plain_text}
+						</>
+					</TitleComponent>
+				<section>
 					<Pill className="inline-flex  !text-sm text-gray-300">Updated {updatedDateFormatted}</Pill>
 					
         </section>
         <section>
-          <div className="prose prose-invert max-w-screen-md flex flex-col">
+          <div className="prose prose-invert max-w-4xl flex flex-col ">
             {post.results.map((postInfo, i) => (
               <Fragment key={i}>
                 {/* @ts-expect-error */}
