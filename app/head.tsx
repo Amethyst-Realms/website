@@ -1,4 +1,9 @@
 export default function Head() {
+  
+  const banner = "https://rove-website.vercel.app/logos/amethyst-banner.png"
+  const title = "Amethyst Realms | Next-Generation Minecraft Experience Creation Studio"
+  const description = "At Amethyst Realms, creates Minecraft experiences that delight, like Rove. Rove is an open-world Minecraft zombie survival experience. Play now at play.amethystrealms.com."
+  
   return (
     <>
       {/* <!-- Primary Meta Tags --> */}
@@ -7,11 +12,11 @@ export default function Head() {
       </title>
       <meta
         name="title"
-        content="Amethyst Realms | Next-Generation Minecraft Experience Creation Studio"
+        content={title}
       />
       <meta
         name="description"
-        content="Amethyst Realms creates Minecraft experiences that delight players. Our leading project is Rove, an open-world Minecraft zombie survival experience. Play now at play.amethystrealms.com."
+        content={description}
       />
 
       {/* <!-- Open Graph / Facebook --> */}
@@ -19,15 +24,14 @@ export default function Head() {
       {/* <meta property="og:url" content="https://metatags.io/"> */}
       <meta
         property="og:title"
-        content="Amethyst Realms | Next-Generation Minecraft Experience Creation Studio"
+        content={title}
       />
       <meta
         property="og:description"
-        content="Amethyst Realms creates Minecraft experiences that delight players. Our leading project is Rove, an open-world Minecraft zombie survival experience. Play now at `play.amethystrealms.com`."
-      />
+        content={description}      />
       <meta
         property="og:image"
-        content="https://rove-website.vercel.app/logos/amethyst-banner.png"
+        content={banner}
       />
 
       {/* <!-- Twitter --> */}
@@ -35,15 +39,14 @@ export default function Head() {
       {/* <meta property="twitter:url" content="https://metatags.io/" /> */}
       <meta
         property="twitter:title"
-        content="Amethyst Realms | Next-Generation Minecraft Experience Creation Studio"
+        content={title}
       />
       <meta
         property="twitter:description"
-        content="Amethyst Realms creates Minecraft experiences that delight players. Our leading project is Rove, an open-world Minecraft zombie survival experience. Play now at `play.amethystrealms.com`."
-      />
+        content={description}      />
       <meta
         property="twitter:image"
-        content="https://rove-website.vercel.app/logos/amethyst-banner.png"
+        content={banner}
       />
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <link rel="icon" href="/favicon.ico" />
