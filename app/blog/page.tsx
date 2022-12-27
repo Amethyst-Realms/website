@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ColoredPill from "../../components/element/coloredPill";
 import Pill from "../../components/element/pill";
 import { formatDate } from "../../lib/misc";
@@ -76,7 +77,7 @@ export default async function Page() {
       <h1 className="title mb-8">Blogs</h1>
       <div className="grid md:grid-cols-2 gap-12">
         {posts.map((post, i) => (
-          <div key={i} className="group hover:border-opacity-20 transition duration-300 border border-white border-opacity-0  p-2 rounded-xl cursor-pointer">
+          <Link key={i} href={`/blog/${post.id}`} className="group hover:border-opacity-20 transition duration-300 border border-white border-opacity-0  p-2 rounded-xl cursor-pointer">
             <div className="relative">
               {post.coverImage ? (
                 <>
@@ -109,7 +110,7 @@ export default async function Page() {
                 <span className="italic text-gray-200">No description.</span>
               )}
             </p>
-          </div>
+          </Link>
         ))}
       </div>
     </>
