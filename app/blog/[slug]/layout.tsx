@@ -10,8 +10,8 @@ export default function BlogLayout({
   return (
     <>
       <Link href="/blog" className="mr-auto">
-        <Pill className="!pl-1 mb-10" hover>
-          <InnerPill className="py-1" left>
+        <Pill small className="!pl-1 mb-10" hover>
+          <InnerPill className="py-0.5" left>
             <ChevronLeftIcon className="w-4 h-4" />
           </InnerPill>
           All Blogs
