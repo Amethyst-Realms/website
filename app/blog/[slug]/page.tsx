@@ -48,8 +48,8 @@ export default async function BlogPage({
             </>
           ) : (
             <>
-              <div className="grow h-44 absolute inset-0 z-10 bg-gradient-to-br from-cyan-600 to-purple-500  rounded-xl"></div>
-              <div className="grow h-44 blur-xl bg-gradient-to-br from-cyan-600 to-purple-500  rounded-xl"></div>
+              <div className="grow h-64 absolute inset-0 z-10 bg-gradient-to-br from-cyan-600 to-purple-500  rounded-xl"></div>
+              <div className="grow h-64 blur-xl bg-gradient-to-br from-cyan-600 to-purple-500  rounded-xl"></div>
             </>
           )}
         </div>
