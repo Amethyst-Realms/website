@@ -57,7 +57,10 @@ export interface Text {
 
 export interface Cover {
 	type: string,
-	external: {
+	external?: {
+		url: string
+	}
+	file?: {
 		url: string
 	}
 }
