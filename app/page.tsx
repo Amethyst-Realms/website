@@ -8,6 +8,10 @@ import CopyIP from "../components/home/copyIP";
 import OnlinePlayers from "../components/home/onlinePlayer";
 import RoveCard from "../components/home/rove";
 import Pill from "../components/element/pill";
+import { Suspense } from "react";
+import LatestBlog from "../components/home/latestBlog";
+import { LoadingPostPreview } from "../components/element/postPreview";
+import Link from "next/link";
 
 export default function Home() {
   const gradient1 = {
@@ -47,18 +51,29 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <section className="grow flex flex-col ">
-        <h2 className="mx-auto font-bold text-7xl mt-8">Blog</h2>
+      <section className="grow flex flex-col px-6">
+        <h2 className="mx-auto font-bold text-5xl mt-8">Latest Posts</h2>
+        <div className="max-w-4xl w-full mx-auto py-10 grid md:grid-cols-2 lg:grid-cols-3 gap-4 ">
+          <Suspense
+            fallback={[...Array(3)].map((_, i) => (
+              <LoadingPostPreview key={i} />
+            ))}
+          >
+            {/* @ts-expect-error Server Component */}
+            <LatestBlog />
+          </Suspense>
+        </div>
+        <Link href="/blog" className="mx-auto px-4 py-2 bg-white hover:brightness-75 shadow-white/25 shadow-md transition duration-300 text-gray-900 font-semibold rounded-xl">See all posts</Link>
       </section>
-      <section className="grow flex flex-col ">
-      <h2 className="mx-auto font-bold text-7xl mt-8">Servers</h2>
-      <div className="max-w-4xl w-full mx-auto py-10 grid md:grid-cols-2 lg:grid-cols-3 gap-4  ">
-        <div className=""></div>
-        <Pill className="flex flex-col !rounded-md !py-6">
-          <RoveCard />
-        </Pill>
-        <div className=" md:col-span-2 lg:col-span-1"></div>
-      </div>
+      <section className="grow flex flex-col px-6 ">
+        <h2 className="mx-auto font-bold text-5xl mt-16">Servers</h2>
+        <div className="max-w-4xl w-full mx-auto py-10 grid md:grid-cols-2 lg:grid-cols-3 gap-4  ">
+          <div className=""></div>
+          <Pill className="flex flex-col !rounded-md !py-6">
+            <RoveCard />
+          </Pill>
+          <div className=" md:col-span-2 lg:col-span-1"></div>
+        </div>
       </section>
       <div></div>
     </Layout>

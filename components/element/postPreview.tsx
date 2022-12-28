@@ -7,7 +7,7 @@ export function PostPreview({ post }: { post: Post }) {
   return (
     <Link
       href={`/blog/${post.id}`}
-      className="group hover:border-opacity-20 transition duration-300 border border-white border-opacity-0  p-2 rounded-xl cursor-pointer"
+      className="group hover:border-opacity-20 transition duration-300 border border-white border-opacity-0 p-2 rounded-xl cursor-pointer"
     >
       <div className="relative">
         {post.coverImage ? (
@@ -16,20 +16,16 @@ export function PostPreview({ post }: { post: Post }) {
               src={post.coverImage}
               className="w-full h-52 z-10 object-cover rounded-xl"
             />
-
-            {/* <img
-                    src={post.coverImage}
-                    className=" blur-xl w-full h-44 object-cover rounded-xl"
-                  /> */}
           </>
         ) : (
           <>
             <div className="grow h-52  z-10 bg-gradient-to-br from-cyan-600 to-purple-500 rounded-xl"></div>
-            {/* <div className="grow h-44 blur-xl bg-gradient-to-br from-cyan-600 to-purple-500  rounded-xl"></div> */}
           </>
         )}
       </div>
-      <h2 className="font-bold text-xl mt-4 mb-0.5">{post.title}</h2>
+      <h2 className="font-bold text-xl mt-4 mb-0.5 line-clamp-2">
+        {post.title}
+      </h2>
       <div className="flex items-center">
         {post.type && <GetPill type={post.type} />}
         <p className="text-xs text-gray-300">{formatDate(post.created)}</p>
@@ -40,6 +36,21 @@ export function PostPreview({ post }: { post: Post }) {
         )}
       </p>
     </Link>
+  );
+}
+
+export function LoadingPostPreview() {
+  return (
+    <div className="group animate-pulse  p-2 rounded-xl cursor-pointer">
+      <div className="relative">
+        <div className="grow h-52  z-10 bg-neutral-900  rounded-xl"></div>
+      </div>
+      <div className="rounded-md bg-neutral-900 h-8 mt-4 w-full"></div>
+      <div className="rounded-full bg-neutral-900 h-6 mt-2 w-24 "></div>
+      <div className="rounded-md bg-neutral-900 h-5 mt-4 w-full "></div>
+      <div className="rounded-md bg-neutral-900 h-5 mt-1 w-full "></div>
+      <div className="rounded-md bg-neutral-900 h-5 mt-1 w-full "></div>
+    </div>
   );
 }
 

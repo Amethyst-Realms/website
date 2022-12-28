@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .title {
-	@apply text-4xl tracking-wide leading-[4.5rem] font-extrabold;
+  @apply text-4xl tracking-wide leading-[4.5rem] font-extrabold;
 }

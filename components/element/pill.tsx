@@ -17,7 +17,7 @@ export default function Pill({
 }) {
   return (
     <div
-			aria-disabled={disabled}
+      aria-disabled={disabled}
       className={`rounded-full select-none ${
         hover && "cursor-pointer transition duration-300 hover:bg-white/20"
       } ${
@@ -36,16 +36,19 @@ export default function Pill({
 export function InnerPill({
   className,
   children,
-  left
+  left,
 }: {
   className?: string;
   children: ReactNode;
-  left: boolean
+  left?: boolean;
 }) {
   return (
-    <div className={`rounded-full px-2 bg-white/10 ${left ? "mr-4" : "ml-4"} ${className}`}>
+    <div
+      className={`rounded-full px-2 bg-white/10 ${
+        left ? "mr-4" : "ml-4"
+      } ${className}`}
+    >
       {children}
     </div>
   );
 }
-
