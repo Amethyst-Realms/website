@@ -63,7 +63,7 @@ export default function Home() {
             <LatestBlog />
           </Suspense>
         </div>
-        <Link href="/blog" className="mx-auto px-4 py-2 bg-white hover:brightness-75 shadow-white/25 shadow-md transition duration-300 text-gray-900 font-semibold rounded-xl">See all posts</Link>
+        <Link href="/blog" className="mx-auto px-4 py-2 bg-white hover:brightness-75  transition duration-300 text-gray-900 font-semibold rounded-xl">See all posts</Link>
       </section>
       <section className="grow flex flex-col px-6 ">
         <h2 className="mx-auto font-bold text-5xl mt-16">Servers</h2>
@@ -75,7 +75,6 @@ export default function Home() {
           <div className=" md:col-span-2 lg:col-span-1"></div>
         </div>
       </section>
-      <div></div>
     </Layout>
   );
 }
