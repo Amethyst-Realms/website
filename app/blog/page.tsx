@@ -5,7 +5,7 @@ import {
 } from "../../components/element/postPreview";
 import { getPosts } from "../../lib/notion/getPosts";
 
-export const revalidate = 30; // revalidatyes every 30 seconds if someone requests the page. Not permanant, using this for testing
+export const revalidate = 300; // revalidatyes every 30 seconds if someone requests the page. Not permanant, using this for testing
 
 export default async function Page() {
   const posts = await getPosts();

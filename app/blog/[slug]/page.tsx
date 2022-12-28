@@ -1,12 +1,12 @@
 import { notion } from "../../../lib/notion";
 import { RenderBlock } from "../../../components/notionPage";
 import { Fragment } from "react";
-import Layout from "../../../components/layout";
+import { config } from "../../../lib/project.config";
 import Pill from "../../../components/element/pill";
 import { TitleComponent } from "./title";
 import { formatDate } from "../../../lib/misc";
 
-export const revalidate = 30; // revalidatyes every 30 seconds if someone requests the page. Not permanant, using this for testing
+export const revalidate = 300; // revalidatyes every 5 mins if someone requests the page. Not permanant, using this for testing
 
 export default async function BlogPage({
   params,
