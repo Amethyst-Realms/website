@@ -39,9 +39,9 @@ export default function Navbar({ fixed }: { fixed?: boolean }) {
             className="h-8 w-8 rounded-full"
             placeholder="blur"
           />
-          <h1 className="ml-4 font-medium text-lg">Amethyst</h1>
+          <h1 className="hidden md:block font-medium text-lg ml-4">Amethyst</h1>
         </Link>
-        <div className="absolute inset-0 flex items-center justify-center ">
+        <div className="md:absolute md:inset-0 flex items-center justify-center ">
           <Link
             className="rounded-full  relative group transition-all duration-300 hover:scale-105 cursor-pointer px-2.5 font-medium"
             href="/servers/rove"
