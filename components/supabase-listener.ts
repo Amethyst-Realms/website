@@ -1,21 +1,25 @@
-'use client'
+"use client";
 
-import { useRouter } from 'next/navigation'
-import { useEffect } from 'react'
-import supabase from '../lib/supabase-browser'
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import supabase from "../lib/supabase-browser";
 
-export default function SupabaseListener({ accessToken }: { accessToken?: string }) {
-  const router = useRouter()
+export default function SupabaseListener({
+  accessToken,
+}: {
+  accessToken?: string;
+}) {
+  const router = useRouter();
 
   useEffect(() => {
     supabase.auth.onAuthStateChange((event, session) => {
       if (session?.access_token !== accessToken) {
-        router.refresh()
+        router.refresh();
       }
-    })
-  }, [accessToken, router])
+    });
+  }, [accessToken, router]);
 
-  return null
+  return null;
 }
 
 // export function Test() {

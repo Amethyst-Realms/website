@@ -42,13 +42,23 @@ export default function Navbar({ fixed }: { fixed?: boolean }) {
           <h1 className="ml-4 font-medium text-lg">Amethyst</h1>
         </Link>
         <div className="absolute inset-0 flex items-center justify-center ">
-					<Link className="rounded-full  relative group transition-all duration-300 hover:scale-105 cursor-pointer px-2.5 font-medium" href="/servers/rove">
-						<div className=" from-cyan-600 inset-0 rounded-full -z-10 opacity-20 transition duration-500 group-hover:opacity-100 absolute to-purple-500 bg-gradient-to-br "></div>
-						Rove
-					</Link>
-				</div>
-        <a rel="noreferrer noopener" href="https://forms.gle/gZ496XLE238fZERs6" target="_blank" className="z-40">
-          <Pill hover small={true}>Apply</Pill>
+          <Link
+            className="rounded-full  relative group transition-all duration-300 hover:scale-105 cursor-pointer px-2.5 font-medium"
+            href="/servers/rove"
+          >
+            <div className=" from-cyan-600 inset-0 rounded-full -z-10 opacity-20 transition duration-500 group-hover:opacity-100 absolute to-purple-500 bg-gradient-to-br "></div>
+            Rove
+          </Link>
+        </div>
+        <a
+          rel="noreferrer noopener"
+          href="https://forms.gle/gZ496XLE238fZERs6"
+          target="_blank"
+          className="z-40"
+        >
+          <Pill hover small={true}>
+            Apply
+          </Pill>
         </a>
       </div>
     </nav>

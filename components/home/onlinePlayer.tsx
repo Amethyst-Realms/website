@@ -16,7 +16,7 @@ export default async function OnlinePlayers() {
 async function getData() {
   const res = await fetch("https://api.mcsrvstat.us/2/minehut.com", {
     next: { revalidate: 120 }, // updates cache every 2 mins
-  }); 
+  });
 
   if (!res.ok) {
     // activates nearest error boundry

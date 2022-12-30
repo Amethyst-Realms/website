@@ -6,7 +6,7 @@ export default function NavBlur() {
   const [scrollY, setScrollY] = useState(0);
   const handleScroll = () => {
     setScrollY(window.scrollY);
-		console.log(window.scrollY)
+    console.log(window.scrollY);
   };
 
   useEffect(() => {
@@ -17,5 +17,11 @@ export default function NavBlur() {
     };
   }, []);
 
-  return <div className={`${scrollY > 5 ? "backdrop-blur" : "backdrop-blur-none"} transition-all absolute inset-0 -z-10`}></div>;
+  return (
+    <div
+      className={`${
+        scrollY > 5 ? "backdrop-blur" : "backdrop-blur-none"
+      } transition-all absolute inset-0 -z-10`}
+    ></div>
+  );
 }

@@ -5,9 +5,11 @@ import type {
   ParagraphBlockObjectResponse,
 } from "@notionhq/client/build/src/api-endpoints";
 import { ReactNode } from "react";
-import { PencilSquareIcon, ExclamationTriangleIcon } from "@heroicons/react/24/outline";
+import {
+  PencilSquareIcon,
+  ExclamationTriangleIcon,
+} from "@heroicons/react/24/outline";
 import Pill from "./element/pill";
-
 
 export function RenderBlock({
   block,
@@ -87,7 +89,7 @@ export const renderBlocks = (block: BlockObjectResponse): ReactNode => {
       );
     case "heading_2":
       return (
-        <h2 className="!mt-12 tracking-wide" >
+        <h2 className="!mt-12 tracking-wide">
           <Text text={value.rich_text} />
         </h2>
       );
@@ -136,12 +138,12 @@ export const renderBlocks = (block: BlockObjectResponse): ReactNode => {
             src={src}
             alt={caption}
             loading="lazy"
-            className={` h-full max-h-[30rem] w-full object-cover rounded-xl ${caption && "!mb-2"}`}
+            className={` h-full max-h-[30rem] w-full object-cover rounded-xl ${
+              caption && "!mb-2"
+            }`}
           />
           {caption && (
-            <figcaption className="text-sm italic ml-2">
-              {caption}
-            </figcaption>
+            <figcaption className="text-sm italic ml-2">{caption}</figcaption>
           )}
         </div>
       );
@@ -152,18 +154,29 @@ export const renderBlocks = (block: BlockObjectResponse): ReactNode => {
       let warn = false;
       let displayText: string;
       if ((value.rich_text[0].plain_text as string).startsWith("Warn: ")) {
-        displayText = (value.rich_text[0].plain_text as string).replace("Warn: ", "");
+        displayText = (value.rich_text[0].plain_text as string).replace(
+          "Warn: ",
+          ""
+        );
         warn = true;
       } else {
-        displayText = value.rich_text[0].plain_text
+        displayText = value.rich_text[0].plain_text;
       }
       return (
         <div
-          className={`rounded-xl border p-4 my-4 flex text-gray-100 ${warn ? "bg-yellow-500/5 border-yellow-500 shadow-md shadow-yellow-500/10": "bg-white/5 border-white/25"}`}
+          className={`rounded-xl border p-4 my-4 flex text-gray-100 ${
+            warn
+              ? "bg-yellow-500/5 border-yellow-500 shadow-md shadow-yellow-500/10"
+              : "bg-white/5 border-white/25"
+          }`}
           key={id}
         >
           <div className=" mr-4">
-            {warn ? <ExclamationTriangleIcon className="h-6 w-6" /> : <PencilSquareIcon className="h-6 w-6" />}
+            {warn ? (
+              <ExclamationTriangleIcon className="h-6 w-6" />
+            ) : (
+              <PencilSquareIcon className="h-6 w-6" />
+            )}
           </div>
           {displayText}
         </div>

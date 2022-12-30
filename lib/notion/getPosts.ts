@@ -46,7 +46,7 @@ export const getPosts = async () => {
       const page: PageType = await notion.pages.retrieve({
         page_id: result.id,
       });
-			
+
       //console.log(page)
       //add cleaned up data to posts array
       posts.push({
@@ -55,7 +55,7 @@ export const getPosts = async () => {
         title: result.child_page.title,
         updated: new Date(result.last_edited_time),
         description: desc,
-				//@ts-expect-error
+        //@ts-expect-error
         coverImage: page.cover ? page.cover[page.cover.type].url : undefined,
         type,
       });
@@ -63,9 +63,11 @@ export const getPosts = async () => {
   }
 
   //sorts posts by date
-  posts.sort((a, b) => { return b.created.getTime() - a.created.getTime()})
+  posts.sort((a, b) => {
+    return b.created.getTime() - a.created.getTime();
+  });
   //posts[0].
-//console.log(posts)
-	
+  //console.log(posts)
+
   return posts;
 };

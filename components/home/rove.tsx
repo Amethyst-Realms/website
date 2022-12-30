@@ -7,7 +7,12 @@ import roveLogo from "../../public/logos/rove.png";
 export default function RoveCard() {
   return (
     <>
-      <Image src={roveLogo} alt="Logo for rove" width={200} className="max-w-xs md:max-w-[auto] mx-auto" />
+      <Image
+        src={roveLogo}
+        alt="Logo for rove"
+        width={200}
+        className="max-w-xs md:max-w-[auto] mx-auto"
+      />
       <div className="rounded-full w-20 mt-4 mx-auto mb-10 h-2 bg-gradient-to-br from-cyan-600 to-purple-500 opacity-40"></div>
       <div className="flex flex-col items-center space-y-4">
         {features.map((feature, i) => (
