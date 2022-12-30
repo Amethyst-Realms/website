@@ -56,7 +56,7 @@ export const getPosts = async () => {
         updated: new Date(result.last_edited_time),
         description: desc,
 				//@ts-expect-error
-        coverImage: page.cover ? page.cover.external ? page.cover.external.url : page.cover.file.url : undefined,
+        coverImage: page.cover ? page.cover[page.cover.type].url : undefined,
         type,
       });
     }
@@ -65,7 +65,7 @@ export const getPosts = async () => {
   //sorts posts by date
   posts.sort((a, b) => { return b.created.getTime() - a.created.getTime()})
   //posts[0].
-console.log(posts)
+//console.log(posts)
 	
   return posts;
 };

@@ -36,20 +36,20 @@ export default async function BlogPage({
             <>
               <img
                 /* @ts-expect-error Mistyped JSON*/
-                src={postInfo.cover.external.url}
+                src={postInfo.cover[postInfo.cover.type].url}
                 className="w-full h-64 absolute inset-0 z-10 object-cover rounded-2xl"
               />
 
               <img
                 /* @ts-expect-error Mistyped JSON*/
-                src={postInfo.cover.external.url}
-                className=" blur-xl w-full h-64 object-cover rounded-2xl"
+                src={postInfo.cover[postInfo.cover.type].url}
+                className=" blur-xl w-full h-64 object-cover"
               />
             </>
           ) : (
             <>
-              <div className="grow h-64 absolute inset-0 z-10 bg-gradient-to-br from-cyan-600 to-purple-500  rounded-xl"></div>
-              <div className="grow h-64 blur-xl bg-gradient-to-br from-cyan-600 to-purple-500  rounded-xl"></div>
+              <div className="grow h-64 absolute inset-0 z-10 bg-gradient-to-br from-cyan-600 to-purple-500  rounded-2xl"></div>
+              <div className="grow h-64 blur-xl bg-gradient-to-br from-cyan-600 to-purple-500  "></div>
             </>
           )}
         </div>
