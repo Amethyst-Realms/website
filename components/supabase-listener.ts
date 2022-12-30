@@ -21,7 +21,3 @@ export default function SupabaseListener({
 
   return null;
 }
-
-// export function Test() {
-//   return null
-// }

@@ -1,8 +1,6 @@
 import type {
-  ListBlockChildrenResponse,
   BlockObjectResponse,
   PartialBlockObjectResponse,
-  ParagraphBlockObjectResponse,
 } from "@notionhq/client/build/src/api-endpoints";
 import { ReactNode } from "react";
 import {

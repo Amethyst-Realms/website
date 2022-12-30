@@ -1,7 +1,6 @@
 import { notion } from "../../../lib/notion";
 import { RenderBlock } from "../../../components/notionPage";
 import { Fragment } from "react";
-import { config } from "../../../lib/project.config";
 import Pill from "../../../components/element/pill";
 import { TitleComponent } from "./title";
 import { formatDate } from "../../../lib/misc";

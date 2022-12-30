@@ -3,11 +3,8 @@ import Link from "next/link";
 import amethystLogo from "../../public/logos/amythyst-small.png";
 import Pill from "../element/pill";
 import NavBlur from "./navbarBlur";
-//import { usePathname } from "next/navigation";
 
 export default function Navbar({ fixed }: { fixed?: boolean }) {
-  //const pathname = usePathname();
-
   const pages: { name: string; route: string; matcher: RegExp }[] = [
     {
       name: "Home",

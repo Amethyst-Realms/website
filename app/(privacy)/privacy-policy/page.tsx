@@ -348,11 +348,10 @@ export default function PrivacyPage() {
           section and/or with the following third parties.
         </i>
       </p>
-			<p>
-				We may need to share your personal information in the following
-      situations:
-			</p>
-      
+      <p>
+        We may need to share your personal information in the following
+        situations:
+      </p>
       <ul>
         <li>
           <b>Business Transfers. </b>
@@ -441,17 +440,19 @@ export default function PrivacyPage() {
         applicable law.
       </p>
       <h3>European Commission's Standard Contractual Clauses:</h3>
-			<p> We have implemented measures to protect your personal information,
-      including by using the European Commission's Standard Contractual Clauses
-      for transfers of personal information between our group companies and
-      between us and our third-party providers. These clauses require all
-      recipients to protect all personal information that they process
-      originating from the EEA or UK in accordance with European data protection
-      laws and regulations. Our Standard Contractual Clauses can be provided
-      upon request. We have implemented similar appropriate safeguards with our
-      third-party service providers and partners and further details can be
-      provided upon request.</p>
-     
+      <p>
+        {" "}
+        We have implemented measures to protect your personal information,
+        including by using the European Commission's Standard Contractual
+        Clauses for transfers of personal information between our group
+        companies and between us and our third-party providers. These clauses
+        require all recipients to protect all personal information that they
+        process originating from the EEA or UK in accordance with European data
+        protection laws and regulations. Our Standard Contractual Clauses can be
+        provided upon request. We have implemented similar appropriate
+        safeguards with our third-party service providers and partners and
+        further details can be provided upon request.
+      </p>
       <h2>8. HOW LONG DO WE KEEP YOUR INFORMATION?</h2>
       <p>
         <i>
@@ -650,7 +651,6 @@ export default function PrivacyPage() {
         mobile contact number, unique personal identifier, online identifier,
         Internet Protocol address, email address, and account name
         <b>
-          
           <p>NO</p>
         </b>
       </p>
@@ -662,7 +662,6 @@ export default function PrivacyPage() {
         Name, contact information, education, employment, employment history,
         and financial information
         <b>
-          
           <p>NO</p>
         </b>
       </p>
@@ -673,7 +672,6 @@ export default function PrivacyPage() {
         </h4>
         Gender and date of birth
         <b>
-          
           <p>NO</p>
         </b>
       </p>
@@ -682,7 +680,6 @@ export default function PrivacyPage() {
         Transaction information, purchase history, financial details, and
         payment information
         <b>
-          
           <p>NO</p>
         </b>
       </p>
@@ -690,7 +687,6 @@ export default function PrivacyPage() {
         <h4>E. Biometric information</h4>
         Fingerprints and voiceprints
         <b>
-          
           <p>NO</p>
         </b>
       </p>
@@ -700,7 +696,6 @@ export default function PrivacyPage() {
         interactions with our and other websites, applications, systems, and
         advertisements
         <b>
-          
           <p>NO</p>
         </b>
       </p>
@@ -708,7 +703,6 @@ export default function PrivacyPage() {
         <h4>G. Geolocation data</h4>
         Device location
         <b>
-          
           <p>YES</p>
         </b>
       </p>
@@ -720,7 +714,6 @@ export default function PrivacyPage() {
         Images and audio, video or call recordings created in connection with
         our business activities
         <b>
-          
           <p>NO</p>
         </b>
       </p>
@@ -730,7 +723,6 @@ export default function PrivacyPage() {
         business level or job title, work history, and professional
         qualifications if you apply for a job with us
         <b>
-          
           <p>NO</p>
         </b>
       </p>
@@ -738,7 +730,6 @@ export default function PrivacyPage() {
         <h4>J. Education Information</h4>
         Student records and directory information
         <b>
-          
           <p>NO</p>
         </b>
       </p>
@@ -748,7 +739,6 @@ export default function PrivacyPage() {
         above to create a profile or summary about, for example, an individual
         {"'"}s preferences and characteristics
         <b>
-          
           <p>NO</p>
         </b>
       </p>

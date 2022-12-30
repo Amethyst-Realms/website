@@ -6,7 +6,6 @@ export default function NavBlur() {
   const [scrollY, setScrollY] = useState(0);
   const handleScroll = () => {
     setScrollY(window.scrollY);
-    console.log(window.scrollY);
   };
 
   useEffect(() => {
