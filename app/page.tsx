@@ -31,17 +31,17 @@ export default function Home() {
           className="absolute inset-0 bg-black/10 flex flex-col items-center justify-center"
           style={gradient1}
         >
-          <div className="relative ">
+          <div className="relative h-screen grid place-items-center">
             <Image
               src={amethystLogo}
               priority={true}
               alt="Amethyst Realms Logo"
               width={3510}
               height={2106}
-              className="2xl:max-w-[90rem] -translate-y-28 select-none"
+              className="2xl:max-w-[90rem] -translate-y-16 select-none"
             />
-            <div className="absolute inset-0 grid place-items-center ">
-              <div className="translate-y-32 flex space-x-8">
+            <div className="absolute inset-0 -translate-y-8 flex justify-center items-end">
+              <div className=" flex space-x-8">
                 <Suspense
                   fallback={
                     <Pill className="!pr-1">
@@ -60,8 +60,8 @@ export default function Home() {
         </div>
       </div>
       <section className="grow flex flex-col px-6">
-        <h2 className="mx-auto font-bold text-5xl mt-8">Latest Posts</h2>
-        <div className="max-w-4xl w-full mx-auto py-10 grid md:grid-cols-2 lg:grid-cols-3 gap-4 ">
+        <h2 className="mx-auto font-bold text-5xl mt-8 mb-10">Latest Posts</h2>
+        <div className="max-w-4xl w-full mx-auto  grid md:grid-cols-2 lg:grid-cols-3 gap-4 ">
           <Suspense
             fallback={[...Array(3)].map((_, i) => (
               <LoadingPostPreview key={i} />
@@ -73,14 +73,14 @@ export default function Home() {
         </div>
         <Link
           href="/blog"
-          className="mx-auto px-4 py-2 bg-white hover:brightness-75  transition duration-300 text-gray-900 font-semibold rounded-xl"
+          className="mx-auto px-4 py-2 mt-8 bg-white hover:brightness-75  transition duration-300 text-gray-900 font-semibold rounded-xl"
         >
           See all posts
         </Link>
       </section>
       <section className="grow flex flex-col px-6 ">
-        <h2 className="mx-auto font-bold text-5xl mt-16">Servers</h2>
-        <div className="max-w-4xl w-full mx-auto py-10 grid md:grid-cols-2 lg:grid-cols-3 gap-4  ">
+        <h2 className="mx-auto font-bold text-5xl mt-32 mb-10">Servers</h2>
+        <div className="max-w-4xl w-full mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-4  ">
           <div className=""></div>
           <Pill className="flex flex-col !rounded-md !py-6">
             <RoveCard />
