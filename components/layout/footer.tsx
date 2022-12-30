@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ReactNode } from "react";
 
 export default function Footer() {
   return (
@@ -8,22 +9,33 @@ export default function Footer() {
           <h3 className="font-medium">Amethyst Realms </h3>
           <p className="ml-4 text-xs text-gray-300 pb-0.5">Made in the USA</p>
         </div>
-        <ul className="space-x-4 mt-4 md:mt-0 text-sm flex flex-row items-center justify-center">
-          <li className="rounded-lg py-0.5 cursor-pointer px-2 bg-white/10 md:bg-transparent transition duration-300 md:hover:bg-white/10">
+        <section className="space-x-4 mt-4 md:mt-0 text-sm flex flex-row items-center justify-center">
+		<FooterButton>
+			<Link href="/privacy-policy">Privacy</Link>
+		</FooterButton>
+          <FooterButton>
             <a href="https://discord.gg/eBrNgY3YFW" rel="noopener noreferrer">
               Discord
             </a>
-          </li>
-          <li className="rounded-lg py-0.5 cursor-pointer px-2 bg-white/10 md:bg-transparent transition duration-300 md:hover:bg-white/10">
+						</FooterButton>
+						<FooterButton>
             <a
               href="https://github.com/Amethyst-Realms/website"
               rel="noopener noreferrer"
             >
               Github
             </a>
-          </li>
-        </ul>
+						</FooterButton>
+        </section>
       </footer>
+    </div>
+  );
+}
+
+function FooterButton({ children }: { children: ReactNode}) {
+  return (
+    <div className="rounded-lg py-0.5 cursor-pointer px-2 bg-white/10 md:bg-transparent transition duration-300 md:hover:bg-white/10">
+      {children}
     </div>
   );
 }

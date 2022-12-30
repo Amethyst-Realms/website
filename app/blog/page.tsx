@@ -12,7 +12,7 @@ export default async function Page() {
 
   return (
     <>
-      <h1 className="title mb- ml-2">Blogs</h1>
+      <h1 className="title ml-2">Blogs</h1>
       <Suspense
         fallback={[...Array(4)].map((_, i) => (
           <LoadingPostPreview key={i} />

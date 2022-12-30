@@ -7,7 +7,7 @@ import amethystLogo from "../public/logos/amethyst-with-gradient.png";
 import CopyIP from "../components/home/copyIP";
 import OnlinePlayers from "../components/home/onlinePlayer";
 import RoveCard from "../components/home/rove";
-import Pill from "../components/element/pill";
+import Pill, { InnerPill } from "../components/element/pill";
 import { Suspense } from "react";
 import LatestBlog from "../components/home/latestBlog";
 import { LoadingPostPreview } from "../components/element/postPreview";
@@ -23,7 +23,6 @@ export default function Home() {
     ), linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 95%, rgba(0,0,0,1) 100%)
     `,
   };
-  //radial-gradient(circle, rgba(28,4,47,0.2) 0%,  rgba(0,0,0,0) 20%),
 
   return (
     <Layout fixed={true}>
@@ -43,8 +42,17 @@ export default function Home() {
             />
             <div className="absolute inset-0 grid place-items-center ">
               <div className="translate-y-32 flex space-x-8">
-                {/* @ts-expect-error Server Component */}
-                <OnlinePlayers />
+                <Suspense
+                  fallback={
+                    <Pill className="!pr-1">
+                      Online Players
+                      <InnerPill>Loading...</InnerPill>
+                    </Pill>
+                  }
+                >
+                  {/* @ts-expect-error Server Component */}
+                  <OnlinePlayers />
+                </Suspense>
                 <CopyIP />
               </div>
             </div>
