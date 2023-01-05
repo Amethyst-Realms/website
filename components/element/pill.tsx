@@ -18,7 +18,7 @@ export default function Pill({
   return (
     <div
       aria-disabled={disabled}
-      className={`rounded-full select-none ${
+      className={`rounded-full select-none backdrop-blur ${
         hover && "cursor-pointer transition duration-300 hover:bg-white/20"
       } ${
         !small ? "py-1 px-4" : "py-1 px-3 text-sm"
