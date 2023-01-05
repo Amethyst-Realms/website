@@ -2,13 +2,24 @@ export default function PrivacyPage() {
   return (
     <div>
       <h1>Privacy Policy</h1>
+      <span>Updated January 5th, 2023</span>
       <p>
         This privacy notice for Amethyst Realms ("Company," "we," "us," or
         "our"), describes how and why we might collect, store, use, and/or share
         ("process") your information when you use our services ("Services"),
-        such as when you: Visit our website at https://rove-website.vercel.app/,
-        or any website of ours that links to this privacy notice Engage with us
-        in other related ways, including any sales, marketing, or events
+        such as when you:
+      </p>
+      <ul>
+        <li>
+          Visit our website at https://rove-website.vercel.app/, or any website
+          of ours that links to this privacy notice
+        </li>
+        <li>
+          Engage with us in other related ways, including any sales, marketing,
+          or events
+        </li>
+      </ul>
+      <p>
         Questions or concerns? Reading this privacy notice will help you
         understand your privacy rights and choices. If you do not agree with our
         policies and practices, please do not use our Services. If you still
@@ -97,7 +108,7 @@ export default function PrivacyPage() {
           HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?
         </li>
       </ol>
-      <h2> WHAT INFORMATION DO WE COLLECT?</h2>
+      <h2>1. WHAT INFORMATION DO WE COLLECT?</h2>
       <h3>Personal information you disclose to us</h3>
       <p>In Short: We collect personal information that you provide to us.</p>
       <p>

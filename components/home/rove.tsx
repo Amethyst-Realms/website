@@ -7,13 +7,15 @@ import roveBG from "../../public/banners/research.png";
 import CTA from "../element/cta";
 
 export default function RoveCard() {
+  
   return (
-    <div className="w-1/3 hover:w-1/2 transition-all relative group duration-300">
+    
+    <div className="grow h-[32rem] rounded-xl lg:rounded-none m-8 lg:m-0 lg:h-full lg:w-1/3 lg:hover:w-1/2 transition-all relative group">
       <Image
         fill
         src={roveBG}
         alt="Image of rove"
-        className="object-cover brightness-[0.3] group-hover:brightness-90 transition duration-300 z-0"
+        className="object-cover brightness-[0.3] lg:group-hover:brightness-90 transition z-0 rounded-2xl lg:rounded-none "
       />
       <div className="z-10 inset-0 absolute flex">
         <div className="flex flex-col my-auto mx-auto items-center">
@@ -21,16 +23,16 @@ export default function RoveCard() {
             src={roveLogo}
             alt="Logo for rove"
             width={200}
-            className="max-w-xs group-hover:scale-125 transition duration-500 md:max-w-[auto]"
+            className="max-w-xs group-hover:scale-125 transition duration-300 lg:max-w-[auto]"
           />
-          <div className="w-20  group-hover:w-full max-w-[12rem] mx-4 mt-2 group-hover:translate-y-2 mb-10 h-0.5 bg-white opacity-40 duration-500 group-hover:opacity-80"></div>
-          <div className="flex flex-col items-center space-y-4">
+          <div className="w-20  group-hover:w-full max-w-[12rem] mx-4 mt-2 group-hover:translate-y-2 mb-10 h-0.5 bg-white opacity-40 duration-300 group-hover:opacity-80"></div>
+          <div className="flex flex-col items-center space-y-4 mb-2">
             {features.map((feature, i) => (
               <Pill
                 small
                 key={i}
                 dark
-                className="group-hover:!bg-black/30 !pl-1 transition duration-500"
+                className="group-hover:!bg-black/30 !pl-1 transition duration-300"
               >
                 <InnerPill className="!ml-0 mr-2 !p-0.5">
                   {feature.icon}

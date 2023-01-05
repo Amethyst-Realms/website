@@ -24,6 +24,10 @@ export default function Home() {
     ), linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 95%, rgba(0,0,0,1) 100%)
     `,
   };
+  const gradient2 = {
+    background: `linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 95%, rgba(0,0,0,1) 100%)
+    `,
+  };
 
   return (
     <Layout fixed={true}>
@@ -42,7 +46,7 @@ export default function Home() {
               className="2xl:max-w-[90rem] -translate-y-16 select-none"
             />
             <div className="absolute inset-0 -translate-y-12 flex justify-center items-end">
-              <div className=" flex space-x-8">
+              <div className=" flex flex-col-reverse md:flex-row space-y-6 space-y-reverse md:space-y-0 items-center md:space-x-8 ">
                 <Suspense
                   fallback={
                     <Pill className="!pr-1">
@@ -78,10 +82,13 @@ export default function Home() {
       </section>
       <section className="grow flex flex-col ">
         <h2 className="mx-auto font-bold text-5xl mt-32 mb-10">Servers</h2>
-        <div className="flex h-[40rem] max-h-[80vh]">
+        <div className="flex flex-col lg:flex-row lg:h-[40rem] lg:max-h-[80vh] relative" >
+          <div className="absolute bottom-0 right-0 left-0 z-20 h-6 bg-gradient-to-t from-black hidden lg:block"  ></div>
+          <div className="absolute top-0 right-0 left-0 z-20 h-6 bg-gradient-to-b from-black hidden lg:block"  ></div>
           <RoveCard />
           <RoveCard />
           <RoveCard />
+          
         </div>
       </section>
     </Layout>
