@@ -27,7 +27,7 @@ export function PostPreview({ post }: { post: Post }) {
         {post.title}
       </h2>
       <div className="flex items-center">
-        {post.type && <GetPill type={post.type} />}
+        {post.type && <GetPill small type={post.type} />}
         <p className="text-xs text-gray-300">{formatDate(post.created)}</p>
       </div>
       <p className="mt-2 line-clamp-3 text-sm text-gray-200">
@@ -54,7 +54,7 @@ export function LoadingPostPreview() {
   );
 }
 
-export function GetPill({ type }: { type: "update" | "event" | "dev blog" }) {
+export function GetPill({ type, small }: { type: "update" | "event" | "dev blog", small?: boolean }) {
   let classes;
 
   switch (type) {
@@ -70,7 +70,7 @@ export function GetPill({ type }: { type: "update" | "event" | "dev blog" }) {
   }
 
   return (
-    <ColoredPill small className={`mr-2 capitalize ${classes}`}>
+    <ColoredPill small={small} className={`mr-2 capitalize ${classes}`}>
       {type}
     </ColoredPill>
   );
