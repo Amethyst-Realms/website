@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import amethystLogo from "../../public/logos/amythyst-small.png";
 import Pill from "../element/pill";
+import DiscordLogo from "../smallSVGs/discordLogo";
 import NavBlur from "./navbarBlur";
 
 export default function Navbar({ fixed }: { fixed?: boolean }) {
@@ -47,6 +48,17 @@ export default function Navbar({ fixed }: { fixed?: boolean }) {
             Rove
           </Link>
         </div>
+        <div className="flex space-x-4">
+        <a
+          rel="noreferrer noopener"
+          href="https://discord.com/invite/eBrNgY3YFW"
+          target="_blank"
+          className="z-40"
+        >
+          <Pill hover small={true}>
+            <DiscordLogo className="h-5 w-5 text-white" />
+          </Pill>
+        </a>
         <a
           rel="noreferrer noopener"
           href="https://forms.gle/gZ496XLE238fZERs6"
@@ -56,7 +68,7 @@ export default function Navbar({ fixed }: { fixed?: boolean }) {
           <Pill hover small={true}>
             Apply
           </Pill>
-        </a>
+        </a></div>
       </div>
     </nav>
   );
