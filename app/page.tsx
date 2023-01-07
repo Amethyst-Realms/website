@@ -9,7 +9,7 @@ import OnlinePlayers from "../components/home/onlinePlayer";
 import RoveCard from "../components/home/rove";
 import Pill, { InnerPill } from "../components/element/pill";
 import { Suspense } from "react";
-import LatestBlog from "../components/home/latestBlog";
+import LatestBlog, { LatestPostPreview } from "../components/home/latestBlog";
 import { LoadingPostPreview } from "../components/element/postPreview";
 import Link from "next/link";
 import CTA from "../components/element/cta";
@@ -45,7 +45,12 @@ export default function Home() {
               height={2106}
               className="2xl:max-w-[90rem] -translate-y-16 select-none"
             />
-            <div className="absolute inset-0 -translate-y-12 flex justify-center items-end">
+            <div className="absolute inset-0 -translate-y-12 flex flex-col items-center justify-end">
+              {/* <Suspense fallback={<div className="h-7 w-72 rounded-full bg-neutral-900 animate-pulse mb-6 "></div>}>
+                {/* @ts-expect-error Server Component
+                <LatestPostPreview />
+              </Suspense> */}
+              <div className="flex">
               <div className=" flex flex-col-reverse md:flex-row space-y-6 space-y-reverse md:space-y-0 items-center md:space-x-8 ">
                 <Suspense
                   fallback={
@@ -59,7 +64,7 @@ export default function Home() {
                   <OnlinePlayers />
                 </Suspense>
                 <CopyIP />
-              </div>
+              </div></div>
             </div>
           </div>
         </div>
