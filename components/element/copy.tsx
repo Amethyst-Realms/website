@@ -10,6 +10,6 @@ export default function Copy({
   children: ReactNode;
 }) {
   return (
-    <div onClick={() => navigator.clipboard.writeText(toCopy)}>{children}</div>
+    <div onClick={() => navigator.clipboard.writeText(toCopy)} className="cursor-pointer">{children}</div>
   );
 }

@@ -5,11 +5,12 @@ import Image from "next/image";
 import roveLogo from "../../public/logos/rove.png";
 import roveBG from "../../public/banners/research.png";
 import CTA from "../element/cta";
+import CopyIP from "./copyIP";
+import Copy from "../element/copy";
+import Link from "next/link";
 
 export default function RoveCard() {
-  
   return (
-    
     <div className="grow h-[32rem] rounded-xl lg:rounded-none m-8 lg:m-0 lg:h-full lg:w-1/3 lg:hover:w-1/2 transition-all relative group">
       <Image
         fill
@@ -41,7 +42,10 @@ export default function RoveCard() {
               </Pill>
             ))}
           </div>
-          <CTA>Learn More</CTA>
+          <Link href="/servers/rove" className="mb-4">
+            <CTA>Learn More</CTA>
+          </Link>
+          <CopyIP small />
         </div>
       </div>
     </div>

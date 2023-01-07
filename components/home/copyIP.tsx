@@ -4,7 +4,7 @@ import { useState } from "react";
 import Copy from "../element/copy";
 import Pill from "../element/pill";
 
-export default function CopyIP() {
+export default function CopyIP({ small }: { small?:boolean }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopied = () => {
@@ -15,9 +15,9 @@ export default function CopyIP() {
   };
 
   return (
-    <Copy toCopy="ip of server">
+    <Copy toCopy="rove.minehut.gg">
       <span onClick={handleCopied}>
-        <Pill hover={true} disabled={copied}>
+        <Pill hover={true} disabled={copied} small={small}>
           {copied ? "Copied!" : "Copy IP"}
         </Pill>
       </span>
