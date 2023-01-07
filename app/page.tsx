@@ -51,20 +51,21 @@ export default function Home() {
                 <LatestPostPreview />
               </Suspense> */}
               <div className="flex">
-              <div className=" flex flex-col-reverse md:flex-row space-y-6 space-y-reverse md:space-y-0 items-center md:space-x-8 ">
-                <Suspense
-                  fallback={
-                    <Pill className="!pr-1">
-                      Online Players
-                      <InnerPill>Loading...</InnerPill>
-                    </Pill>
-                  }
-                >
-                  {/* @ts-expect-error Server Component */}
-                  <OnlinePlayers />
-                </Suspense>
-                <CopyIP />
-              </div></div>
+                <div className=" flex flex-col-reverse md:flex-row space-y-6 space-y-reverse md:space-y-0 items-center md:space-x-8 ">
+                  <Suspense
+                    fallback={
+                      <Pill className="!pr-1">
+                        Online Players
+                        <InnerPill>Loading...</InnerPill>
+                      </Pill>
+                    }
+                  >
+                    {/* @ts-expect-error Server Component */}
+                    <OnlinePlayers />
+                  </Suspense>
+                  <CopyIP />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -87,9 +88,9 @@ export default function Home() {
       </section>
       <section className="grow flex flex-col ">
         <h2 className="mx-auto font-bold text-5xl mt-32 mb-10">Servers</h2>
-        <div className="flex flex-col lg:flex-row lg:h-[40rem] lg:max-h-[80vh] relative" >
-          <div className="absolute bottom-0 right-0 left-0 z-20 h-6 bg-gradient-to-t from-black hidden lg:block"  ></div>
-          <div className="absolute top-0 right-0 left-0 z-20 h-6 bg-gradient-to-b from-black hidden lg:block"  ></div>
+        <div className="flex flex-col lg:flex-row lg:h-[40rem] lg:max-h-[80vh] relative">
+          <div className="absolute bottom-0 right-0 left-0 z-20 h-6 bg-gradient-to-t from-black hidden lg:block"></div>
+          <div className="absolute top-0 right-0 left-0 z-20 h-6 bg-gradient-to-b from-black hidden lg:block"></div>
           <div className="w-1/3"></div>
           <RoveCard />
           <div className="w-1/3"></div>

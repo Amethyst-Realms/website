@@ -54,7 +54,13 @@ export function LoadingPostPreview() {
   );
 }
 
-export function GetPill({ type, small }: { type: "update" | "event" | "dev blog", small?: boolean }) {
+export function GetPill({
+  type,
+  small,
+}: {
+  type: "update" | "event" | "dev blog";
+  small?: boolean;
+}) {
   let classes;
 
   switch (type) {

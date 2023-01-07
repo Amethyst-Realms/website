@@ -4,7 +4,7 @@ import { useState } from "react";
 import Copy from "../element/copy";
 import Pill from "../element/pill";
 
-export default function CopyIP({ small }: { small?:boolean }) {
+export default function CopyIP({ small }: { small?: boolean }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopied = () => {

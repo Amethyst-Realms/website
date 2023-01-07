@@ -49,26 +49,27 @@ export default function Navbar({ fixed }: { fixed?: boolean }) {
           </Link>
         </div>
         <div className="flex space-x-4">
-        <a
-          rel="noreferrer noopener"
-          href="https://discord.com/invite/eBrNgY3YFW"
-          target="_blank"
-          className="z-40"
-        >
-          <Pill hover small={true}>
-            <DiscordLogo className="h-5 w-5 text-white" />
-          </Pill>
-        </a>
-        <a
-          rel="noreferrer noopener"
-          href="https://forms.gle/gZ496XLE238fZERs6"
-          target="_blank"
-          className="z-40"
-        >
-          <Pill hover small={true}>
-            Apply
-          </Pill>
-        </a></div>
+          <a
+            rel="noreferrer noopener"
+            href="https://discord.com/invite/eBrNgY3YFW"
+            target="_blank"
+            className="z-40"
+          >
+            <Pill hover small={true}>
+              <DiscordLogo className="h-5 w-5 text-white" />
+            </Pill>
+          </a>
+          <a
+            rel="noreferrer noopener"
+            href="https://forms.gle/gZ496XLE238fZERs6"
+            target="_blank"
+            className="z-40"
+          >
+            <Pill hover small={true}>
+              Apply
+            </Pill>
+          </a>
+        </div>
       </div>
     </nav>
   );

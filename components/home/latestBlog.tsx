@@ -25,10 +25,12 @@ export async function LatestPostPreview() {
       <InnerPill left className="!mr-2">
         Latest Post
       </InnerPill>
-      <span className="max-w-xs truncate "><span className="font-normal">{latestPost.title}</span></span> 
+      <span className="max-w-xs truncate ">
+        <span className="font-normal">{latestPost.title}</span>
+      </span>
       {/* <InnerPill>
         <ArrowRightIcon className="h-5 w-3" />
       </InnerPill> */}
     </Pill>
-  )
+  );
 }

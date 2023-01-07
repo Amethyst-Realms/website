@@ -5,9 +5,11 @@ import Pill from "../../../components/element/pill";
 import { TitleComponent } from "./title";
 import { formatDate } from "../../../lib/misc";
 import { Block } from "../../../lib/notion/block.types";
-import { ListBlockChildrenResponse, GetPageResponse } from "@notionhq/client/build/src/api-endpoints";
-import { GetPill } from "../../../components/element/postPreview"
-
+import {
+  ListBlockChildrenResponse,
+  GetPageResponse,
+} from "@notionhq/client/build/src/api-endpoints";
+import { GetPill } from "../../../components/element/postPreview";
 
 export const revalidate = 300; // revalidatyes every 5 mins if someone requests the page. Not permanant, using this for testing
 
@@ -66,10 +68,9 @@ export default async function BlogPage({
       </TitleComponent>
       <section className="flex space-x-8 items-center -translate-y-6">
         <Pill className="inline-flex !text-sm text-gray-300">
-           {updatedDate}
+          {updatedDate}
         </Pill>
-        {type != null &&
-        <GetPill type={type} small={false} />}
+        {type != null && <GetPill type={type} small={false} />}
       </section>
       <section>
         <div className="prose prose-invert max-w-4xl flex flex-col ">
@@ -85,7 +86,9 @@ export default async function BlogPage({
   );
 }
 
-const getPost = async (slug: string): Promise<{
+const getPost = async (
+  slug: string
+): Promise<{
   post: ListBlockChildrenResponse;
   postInfo: GetPageResponse;
   type: "update" | "event" | "dev blog" | null;
@@ -98,7 +101,7 @@ const getPost = async (slug: string): Promise<{
     page_id: slug,
   });
 
-   // @ts-expect-error
+  // @ts-expect-error
   const { results }: { results: Block[] } = await notion.blocks.children.list({
     block_id: "53652e538ba146c8acfd0238168c513d",
   });
@@ -106,8 +109,7 @@ const getPost = async (slug: string): Promise<{
 
   results.forEach((block, i) => {
     if (block.id == slug) {
-      if (results[i+1] && results[i + 1].has_children == false) {
-        
+      if (results[i + 1] && results[i + 1].has_children == false) {
         const two = results[i + 1].paragraph?.rich_text[0].plain_text;
         if (two?.toLowerCase() == "[update]") {
           type = "update";
@@ -118,11 +120,11 @@ const getPost = async (slug: string): Promise<{
         }
       }
     }
-  })
+  });
 
   return {
     post,
     postInfo,
-    type 
+    type,
   };
 };
