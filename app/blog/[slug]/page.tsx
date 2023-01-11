@@ -66,7 +66,7 @@ export default async function BlogPage({
           {postInfo.properties.title.title[0].plain_text}
         </>
       </TitleComponent>
-      <section className="flex space-x-8 items-center -translate-y-6">
+      <section className="flex space-x-4 items-center -translate-y-6">
         <Pill className="inline-flex !text-sm text-gray-300">
           {updatedDate}
         </Pill>

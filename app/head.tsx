@@ -3,13 +3,13 @@ export default function Head() {
   const title =
     "Amethyst Realms | Next-Generation Minecraft Experience Creation Studio";
   const description =
-    "Amethyst Realms, creates Minecraft experiences that delight, like Rove. Rove is an open-world Minecraft zombie survival experience. Play now at play.amethystrealms.com.";
+    "Amethyst Realms creates Minecraft experiences that delight players, like Rove. Rove is an open-world MCMMORPG zombie survival experience. Play now at play.amethystrealms.com.";
 
   return (
     <>
       {/* <!-- Primary Meta Tags --> */}
       <title>
-        Amethyst Realms | Next-Generation Minecraft Experience Creation Studio
+        {title}
       </title>
       <meta name="title" content={title} />
       <meta name="description" content={description} />

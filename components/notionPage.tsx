@@ -87,13 +87,13 @@ export const renderBlocks = (block: BlockObjectResponse): ReactNode => {
       );
     case "heading_2":
       return (
-        <h2 className="!mt-12 tracking-wide">
+        <h2 className="tracking-wide !mb-2 !mt-8">
           <Text text={value.rich_text} />
         </h2>
       );
     case "heading_3":
       return (
-        <h3 className="!mt-8 tracking-wide">
+        <h3 className="!mt-6 tracking-wide">
           <Text text={value.rich_text} />
         </h3>
       );
@@ -131,7 +131,7 @@ export const renderBlocks = (block: BlockObjectResponse): ReactNode => {
         value.type === "external" ? value.external.url : value.file.url;
       const caption = value.caption ? value.caption[0]?.plain_text : "";
       return (
-        <div className="mx-auto">
+        <div className="mx-auto select-none">
           <img
             src={src}
             alt={caption}

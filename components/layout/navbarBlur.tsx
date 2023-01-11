@@ -9,6 +9,7 @@ export default function NavBlur() {
   };
 
   useEffect(() => {
+    setScrollY(window.scrollY)
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
