@@ -7,7 +7,7 @@ export function PostPreview({ post }: { post: Post }) {
   return (
     <Link
       href={`/blog/${post.id}`}
-      className="group hover:border-opacity-20 transition duration-300 border border-white border-opacity-0 p-2 rounded-xl cursor-pointer"
+      className="group border-opacity-20  lg:hover:border-opacity-20 transition duration-300 border border-white lg:border-opacity-0 p-2 rounded-xl cursor-pointer"
     >
       <div className="relative">
         {post.coverImage ? (
